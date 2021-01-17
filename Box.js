@@ -1,10 +1,10 @@
 class Box {
     constructor(x, y, width, height) {
       var options = {
-        isStatic:false,
+        //isStatic:false,
           'restitution':0.8,
-          'friction':1.0,
-          'density':1.0
+          'friction':0.1,
+        //  'density':1.0
         
       }
       this.visblility=225;
@@ -30,9 +30,9 @@ class Box {
         World.remove(world, this.body);
         push();
         this.visibility=this.visibility-5;
-        tint(255,this.Visiblity);
+        //tint(255,this.Visiblity);
         pop();
       }
     }
-  };
+  }
   
