@@ -7,8 +7,8 @@ const Constraint=Matter.Constraint;
 
 
 
-var  circle1,ground;	
-var world,sling;
+var  circle1,circleImg,ground;	
+var engine, world,sling, ground1,ground2;
 
 function preload(){
 circleImg=loadImage("polygon.png")
@@ -16,8 +16,7 @@ circleImg=loadImage("polygon.png")
 
 function setup() {
 	createCanvas(1200, 600);
-	rectMode(CENTER);
-
+	//rectMode(CENTER);
 
 	engine = Engine.create();
 	world = engine.world;
@@ -59,8 +58,8 @@ box29=new Box(770,190,30,40)
 box30=new Box(800,190,30,40)
 box31=new Box(830,190,30,40)
 box32 =new Box(800,150,30,40)
-circle1=new Circle(100,200,20)
-sling =new SlingShot (circle1.body,{x:130,y:200})
+circle1=Bodies.circle(100,200,20)
+sling =new SlingShot (this.circle1.body,{x:130,y:200})
 	
 
 Engine.run(engine);
@@ -73,7 +72,10 @@ function draw() {
 background("grey");
 Engine.update(engine);
 
-  circle1.display();
+  fill("gold");
+  imageMode(CENTER)
+  image(circleImg ,circle1.position.x,circle1.position.y,40,40);
+  //circle1.display();
   
   sling.display();
   box1.display();
@@ -113,7 +115,7 @@ Engine.update(engine);
   ground2.display();
   ground3.display();
   
-  drawSprites();
+ // drawSprites();
 
  
 }
@@ -121,7 +123,7 @@ Engine.update(engine);
 
    
   function mouseDragged(){
-	Matter.Body.setPosition(circle1.body,{x:mouseX,y:mouseY})
+	Matter.Body.setPosition(this.circle1,{x:mouseX,y:mouseY})
 	
 	
 	}
