@@ -8,7 +8,7 @@ const Constraint=Matter.Constraint;
 
 
 var  circle1,ground;	
-var world,sling;
+var world,sling, stand1, stand2;
 
 function preload(){
 circleImg=loadImage("polygon.png")
@@ -24,8 +24,8 @@ function setup() {
 	
  
 ground=new Ground(400,400,230,20)
-ground2=new Ground(400,610,2000,20)	
-ground3=new Ground(800,300,230,20)
+stand1=new Ground(400,610,2000,20)	
+stand2=new Ground(800,300,230,20)
 box1=new Box(310,370,30,40)
 box2=new Box(340,370,30,40)
 box3=new Box(370,370,30,40)
@@ -110,8 +110,8 @@ Engine.update(engine);
   box31.display();
   box32.display();
   ground.display();
-  ground2.display();
-  ground3.display();
+  stand1.display();
+  stand2.display();
   
   drawSprites();
 
